@@ -1,0 +1,27 @@
+<div class="card shadow-sm mb-1 ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0 col-md-2">
+        <img
+          [src]="adhesion.photo ? baseUrl + '/' + adhesion.photo : photo"
+          class="rounded-circle"
+          alt="photo adhesion"
+          width="100%"
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div class="{{color}}">{{adhesion.nom | uppercase }}</div>
+        <div class="{{color}} small">
+          <i class="fa-solid {{sexeIcon}}"></i> {{adhesion.nomSexe }}
+        </div>
+        <div class="text-primary small">
+          <i class="fa-solid fa-calendar"></i> {{adhesion.dateAdhesion | date:
+          'dd/MM/yyyy' }}
+        </div>
+        <div class="text-success small">
+          <i class="fa-solid fa-coins"></i> {{ montant| number}} FCFA
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

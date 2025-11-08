@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="d-flex justify-content-between p-2">
+    <h3 class="titre">Les adhesions</h3>
+    <button class="btn btn-primary" type="button" (click)="add()">
+      Ajouter une adhesion
+    </button>
+  </div>
+  <hr />
+  <div class="row">
+    @if(adhesions$ | async; as adhesions) {
+    <div class="col-md-9 liste">
+      <div class="row">
+        @for(adhesion of adhesions| sort : ['nom', 'asc']| sort :
+        ['dateAdhesion', 'desc']; track adhesion.id){
+        <div class="col-md-6">
+          <app-ligne
+            [adhesion]="adhesion"
+            (selectedEvent)="onAdhesionSelected($event)"
+          />
+        </div>
+        }
+      </div>
+    </div>
+    } @if(selectedAdhesion) {
+    <div class="col-md-3">
+      <app-membre-card [membre]="selectedAdhesion" [showInfosMembre]="false" />
+    </div>
+    }
+  </div>
+</div>

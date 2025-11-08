@@ -1,0 +1,8 @@
+<div class="card shadow-sm {{bgColor}} {{color}}">
+  <div class="card-body">
+    <h6 class="card-title text-center">{{ label | uppercase}}</h6>
+    <h6 class="card-title text-center">
+      {{ value | number}} @if(showDevice){<span>FCFA</span>}
+    </h6>
+  </div>
+</div>

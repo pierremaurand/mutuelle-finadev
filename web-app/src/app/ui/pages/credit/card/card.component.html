@@ -1,0 +1,49 @@
+<div class="card shadow membre-card">
+  <div class="card-img-wrapper">
+    <img
+      [src]="
+        credit.photoMembre
+          ? baseUrl + '/' + credit.photoMembre
+          : './assets/images/default_man.jpg'
+      "
+      class="card-img-top"
+      alt="photo membre"
+    />
+    <ul class="list-inline text-center membre-icons animate">
+      <!-- <li class="list-inline-item">
+        <button
+          class="btn btn-warning form-control btn-sm"
+          type="button"
+          (click)="onEdit()"
+        >
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </li> -->
+
+      <li class="list-inline-item">
+        <button
+          class="btn btn-primary form-control btn-sm"
+          type="button"
+          (click)="onView()"
+        >
+          <i class="fa-solid fa-eye"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card-body">
+    <h2 class="card-title text-truncate h6">
+      {{ credit.nomMembre | uppercase }}
+    </h2>
+    <h3 class="card-title text-center text-truncate h6">
+      {{ credit.dateDemande | date }}
+    </h3>
+    <h3 class="card-title text-center text-truncate h6">
+      {{ credit.montantRestant | number }} FCFA
+    </h3>
+    <h3 class="card-title text-center text-truncate h6">
+      {{ credit.status | uppercase }}
+    </h3>
+  </div>
+</div>

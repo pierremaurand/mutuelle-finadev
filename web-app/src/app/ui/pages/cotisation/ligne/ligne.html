@@ -1,0 +1,41 @@
+<div class="card shadow-sm mb-1 ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0 col-md-2">
+        <img
+          [src]="cotisation.photo ? baseUrl + '/' + cotisation.photo : photo"
+          class="rounded-circle"
+          alt="photo cotisation"
+          width="100%"
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div class="{{color}}">{{cotisation.nom | uppercase }}</div>
+        <div class="{{color}} small">
+          <i class="fa-solid {{sexeIcon}}"></i> {{cotisation.nomSexe }}
+        </div>
+        @if(cotisation.dateCotisation && cotisation.retenue){
+        <div class="text-primary small">
+          <i class="fa-solid fa-calendar me-2"></i>{{cotisation.dateCotisation |
+          date: 'MM/yyyy' }}
+        </div>
+        <div class="text-success small">
+          <i class="fa-solid fa-coins me-2"></i>{{ cotisation.retenue| number}}
+          FCFA
+        </div>
+        } @else {
+        <form class="form-floating">
+          <input
+            type="number"
+            class="form-control {{ salaireClass}}"
+            [id]="cotisation.id"
+            placeholder="Salaire du mois"
+            [formControl]="salaireCtrl"
+          />
+          <label [for]="cotisation.id">Salaire du mois</label>
+        </form>
+        }
+      </div>
+    </div>
+  </div>
+</div>

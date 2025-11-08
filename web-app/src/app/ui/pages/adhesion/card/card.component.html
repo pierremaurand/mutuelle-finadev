@@ -1,0 +1,46 @@
+<div class="card shadow membre-card">
+  <div class="card-img-wrapper">
+    <!-- <img
+      [src]="
+        adhesion.photoMembre
+          ? baseUrl + '/' + adhesion.photoMembre
+          : './assets/images/default_man.jpg'
+      "
+      class="card-img-top"
+      alt="photo membre"
+    /> -->
+    <ul class="list-inline text-center membre-icons animate">
+      <li class="list-inline-item">
+        <button
+          class="btn btn-warning form-control btn-sm"
+          type="button"
+          (click)="onEdit()"
+        >
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </li>
+
+      <li class="list-inline-item">
+        <button
+          class="btn btn-primary form-control btn-sm"
+          type="button"
+          (click)="onView()"
+        >
+          <i class="fa-solid fa-eye"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card-body">
+    <!-- <h6 class="text-truncate text-center h6">
+      {{ adhesion.nomMembr | uppercase }}
+    </h6> -->
+    <h6 class="text-truncate text-center h6">
+      {{ adhesion.dateAdhesion | date }}
+    </h6>
+    <h6 class="text-center text-primary text-truncate h6">
+      {{ adhesion.montant | number }} FCFA
+    </h6>
+  </div>
+</div>

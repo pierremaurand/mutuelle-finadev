@@ -1,0 +1,30 @@
+@if(avance$ | async; as avance){
+<div class="container">
+  <div class="d-flex justify-content-between p-2">
+    <h3 class="titre">
+      <i class="fa fa-arrow-circle-left me-2 action" (click)="onBack()"></i
+      >Infos avance
+    </h3>
+
+    <div class="d-flex justify-content-end gap-1">
+      @if(avance.nombreEcheanceImpaye && !avance.status?.includes("Validée")){
+      <button
+        type="button"
+        class="btn btn-success"
+        (click)="onAnticipePaiement(avance.id ?? 0)"
+      >
+        <i class="fa-solid fa-list-check"></i></button
+      >}
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-3">
+      <app-membre-card [membre]="avance" [showInfosMembre]="false" />
+    </div>
+    <div class="col-md-9">
+      <router-outlet />
+    </div>
+  </div>
+</div>
+}

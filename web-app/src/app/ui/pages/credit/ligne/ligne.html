@@ -1,0 +1,32 @@
+<div class="card shadow-sm mb-1 ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0 col-md-2">
+        <img
+          [src]="credit.photo ? baseUrl + '/' + credit.photo : photo"
+          class="rounded-circle"
+          alt="photo credit"
+          width="100%"
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div class="{{color}}">{{credit.nom | uppercase }}</div>
+        <div class="{{color}}">
+          <i class="fa-solid {{sexeIcon}}"></i> {{credit.nomSexe }}
+        </div>
+        <div class="text-primary">
+          <i class="fa-solid fa-calendar"></i> {{credit.dateDecaissement | date:
+          'dd/MM/yyyy' }}
+        </div>
+        <div class="text-success">
+          <i class="fa-solid fa-coins"></i> {{ montant| number}} FCFA
+        </div>
+        <div class="text-success">
+          <span class="badge text-bg-danger"
+            >{{ credit.status | uppercase}}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

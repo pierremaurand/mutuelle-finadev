@@ -1,0 +1,66 @@
+@if(origin === 'membre') {
+<div class="d-flex justify-content-end mb-3">
+  <button class="btn btn-primary" (click)="onBack()">
+    <i class="fa fa-arrow-left"></i> Retour
+  </button>
+</div>
+}
+<div class="row mb-3">
+  <div class="col-md-9">
+    @if(avance$ | async; as avance) {
+    <div class="card shadow">
+      <div class="card-body">
+        <table class="table table-bordered table-striped table-responsive">
+          <tbody>
+            <tr>
+              <th>Solde avance</th>
+              <td class="text-end">
+                {{ avance.montantCapitalRestant | number }} FCFA
+              </td>
+            </tr>
+            <tr>
+              <th>Nombre d'échéances payées</th>
+              <td class="text-end">
+                {{ avance.nombreEcheancePaye | number }}
+              </td>
+            </tr>
+            <tr>
+              <th>Nombre d'échéances impayées</th>
+              <td class="text-end">
+                {{ avance.nombreEcheanceImpaye | number }}
+              </td>
+            </tr>
+            <tr>
+              <th>Date dernière échéance</th>
+              <td class="text-end">
+                {{ avance.dateDerniereEcheance | date : "dd/MM/yyyy" }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    }
+  </div>
+  <div class="col-md-3">
+    <div class="card shadow">
+      <div class="card-body">
+        <app-pie-chart [data]="chartData" />
+      </div>
+    </div>
+  </div>
+</div>
+
+@if(echeancier$ | async; as echeancier){
+<div class="card shadow">
+  <div class="card-body echeancier">
+    <app-echeancier-pret
+      [echeancier]="echeancier"
+      [nbrEcheances]="echeancier.length"
+      [echeancierView]="true"
+      [echeancierCredit]="false"
+    ></app-echeancier-pret>
+  </div>
+</div>
+}

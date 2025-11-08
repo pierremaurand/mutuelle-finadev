@@ -1,0 +1,107 @@
+<div class="d-flex flex-column flex-shrink-0">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/accueil"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Accueil
+      </a>
+    </li>
+    @if(user && user.role === 1){
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/alimentation"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Alimentation
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/remontee"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Remontée
+      </a>
+    </li>
+    } @if(caisse.agentId === user.id){
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/adhesion"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Adhésions
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/cotisation"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Cotisations
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/avance"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Avances
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/credit"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Crédits
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/echeance"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Echéances
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/entree"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Entrée de caisse
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/caisse/view/{{caisse.id}}/sortie"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-list-check me-2"></i>
+        Sortie de caisse
+      </a>
+    </li>
+    }
+  </ul>
+</div>

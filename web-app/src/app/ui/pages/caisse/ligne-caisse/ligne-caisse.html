@@ -1,0 +1,26 @@
+<div class="card shadow-sm mb-1 ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0 col-md-2">
+        <img
+          src="./assets/images/building.png"
+          class="rounded-circle"
+          alt="photo caisse"
+          width="100%"
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div class="">{{caisse.nom | uppercase }}</div>
+        @if(caisse.dateCaisse){
+        <div class="text-primary small">
+          <i class="fa-solid fa-calendar"></i> {{caisse.dateCaisse | date:
+          'dd/MM/yyyy' }}
+        </div>
+        <div class="text-success small">
+          <i class="fa-solid fa-coins"></i> {{ caisse.solde| number}} FCFA
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

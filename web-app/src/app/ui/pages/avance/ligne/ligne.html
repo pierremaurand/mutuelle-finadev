@@ -1,0 +1,33 @@
+<div class="card shadow-sm mb-1 ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0 col-md-2">
+        <img
+          [src]="avance.photo ? baseUrl + '/' + avance.photo : photo"
+          class="rounded-circle"
+          alt="photo avance"
+          width="100%"
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div class="{{color}}">{{avance.nom | uppercase }}</div>
+        <div class="{{color}}">
+          <i class="fa-solid {{sexeIcon}}"></i> {{avance.nomSexe }}
+        </div>
+        <div class="text-primary">
+          <i class="fa-solid fa-calendar"></i> {{avance.dateDecaissement | date:
+          'dd/MM/yyyy' }}
+        </div>
+        <div class="text-success">
+          <i class="fa-solid fa-coins"></i> {{ avance.montantCapitalRestant |
+          number}} FCFA
+        </div>
+        <div class="text-success">
+          <span class="badge text-bg-danger"
+            >{{ avance.status | uppercase}}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

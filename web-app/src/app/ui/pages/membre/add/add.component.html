@@ -1,0 +1,164 @@
+<div class="container">
+  <form [formGroup]="request" (ngSubmit)="submitForm()">
+    <div class="d-flex justify-content-between p-2">
+      <h3 class="titre">
+        <i class="fa fa-arrow-circle-left me-2 action" (click)="onCancel()"></i
+        >Infos membre
+      </h3>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card shadow">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nom" class="form-label">Nom du membre</label>
+                <input
+                  type="text"
+                  class="form-control {{ nomClasse }}"
+                  name="nom"
+                  id="nom"
+                  placeholder="Nom de l'membre..."
+                  formControlName="nom"
+                />
+                <div class="invalid-feedback">Le nom est requis!</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="sexe" class="form-label">Sexe du membre</label>
+                <select
+                  class="form-select {{ sexeClasse }}"
+                  name="sexe"
+                  id="sexe"
+                  formControlName="sexe"
+                >
+                  <option value=""></option>
+                  <option value="1">Masculin</option>
+                  <option value="2">Féminin</option>
+                </select>
+                <div class="invalid-feedback">Le sexe est requis!</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="dateNaissance" class="form-label"
+                  >Date de naissance du membre</label
+                >
+                <input
+                  type="date"
+                  class="form-control {{ dateNaissanceClasse }}"
+                  name="dateNaissance"
+                  id="dateNaissance"
+                  placeholder="Date de naissance du membre..."
+                  formControlName="dateNaissance"
+                />
+                <div class="invalid-feedback">
+                  La date de naissance est requise!
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lieuNaissance" class="form-label"
+                  >Lieu de naissance du membre</label
+                >
+                <input
+                  type="text"
+                  class="form-control {{ lieuNaissanceClasse }}"
+                  name="lieuNaissance"
+                  id="lieuNaissance"
+                  placeholder="Lieu de naissance du membre..."
+                  formControlName="lieuNaissance"
+                />
+                <div class="invalid-feedback">
+                  Le lieu de naissance est requis!
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="telephone" class="form-label"
+                  >Numéro de téléphone du membre</label
+                >
+                <input
+                  type="phone"
+                  class="form-control {{ telephoneClasse }}"
+                  name="telephone"
+                  id="telephone"
+                  placeholder="Le numéro de téléphone du membre..."
+                  formControlName="telephone"
+                />
+                <div class="invalid-feedback">Le téléphone est requis!</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label"
+                  >L'adresse email du membre</label
+                >
+                <input
+                  type="email"
+                  class="form-control {{ emailClasse }}"
+                  name="email"
+                  id="email"
+                  placeholder="L'adresse email du membre..."
+                  formControlName="email"
+                />
+                <div class="invalid-feedback">L'email est requis!</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label"
+                  >Date d'adhésion du membre</label
+                >
+                <input
+                  type="date"
+                  class="form-control {{ dateAdhesionClasse }}"
+                  name="dateAdhesion"
+                  id="dateAdhesion"
+                  placeholder="La date d'adhésion du membre..."
+                  formControlName="dateAdhesion"
+                />
+                <div class="invalid-feedback">
+                  La date d'adhésion est requise!
+                </div>
+              </div>
+              @if(agences$ | async; as agences){
+              <div class="col-md-6 mb-3">
+                <label for="agenceId" class="form-label"
+                  >Agence d'affectation du membre</label
+                >
+                <select
+                  class="form-select {{ agenceIdClasse }}"
+                  name="agenceId"
+                  id="agenceId"
+                  formControlName="agenceId"
+                >
+                  <option value=""></option>
+                  @for(agence of agences; track agence.id){
+                  <option value="{{ agence.id }}">
+                    {{ agence.nom | uppercase }}
+                  </option>
+                  }
+                </select>
+                <div class="invalid-feedback">
+                  L'agence d'affectation est requise!
+                </div>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        @if(membre$) {
+        <app-membre-card [membre]="infosMembre" [showActions]="false" />
+        }
+      </div>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-end gap-1">
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="request.invalid"
+      >
+        <i class="fa-solid fa-floppy-disk"></i> Enregistrer
+      </button>
+      <button class="btn btn-danger" type="button" (click)="onCancel()">
+        <i class="fa-solid fa-xmark"></i> Annuler
+      </button>
+    </div>
+  </form>
+</div>

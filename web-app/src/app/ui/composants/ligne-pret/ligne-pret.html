@@ -1,0 +1,50 @@
+<div class="card shadow-sm mb-1 ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0 col-md-3">
+        <img
+          [src]="infos.photo ? baseUrl + '/' + infos.photo : photoMembre"
+          class="rounded-circle"
+          alt="photo infos"
+          width="100%"
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        @if(infos.dateCotisation) {
+        <div class="{{color}} small">
+          <i class="fa-solid fa-calendar-days"></i>&nbsp;{{infos.dateCotisation|
+          date:'MM/yyyy' }}
+        </div>
+        } @if(infos.dateDecaissement) {
+        <div class="{{color}} small">
+          <i class="fa-solid fa-calendar-days"></i
+          >&nbsp;{{infos.dateDecaissement| date:'dd/MM/yyyy' }}
+        </div>
+        } @if(infos.retenue) {
+        <div class="{{color}} small">
+          <i class="fa-solid fa-coins"></i>&nbsp;{{infos.retenue| number
+          }}&nbsp;FCFA
+        </div>
+        } @if(infos.montantCapital) {
+        <div class="{{color}}">
+          <i class="fa-solid fa-coins"></i>&nbsp;{{infos.montantCapital| number
+          }}&nbsp;FCFA
+        </div>
+        } @if(infos.duree) {
+        <div class="{{color}} small">
+          <i class="fa-solid fa-clock"></i>&nbsp;{{infos.duree| number
+          }}&nbsp;Mois
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-center">
+    @if(infos.montantCapitalRestant) {
+    <div class="{{color}} small">
+      <i class="fa-solid fa-coins"></i>&nbsp;{{infos.montantCapitalRestant|
+      number }}&nbsp;FCFA
+    </div>
+    }
+  </div>
+</div>

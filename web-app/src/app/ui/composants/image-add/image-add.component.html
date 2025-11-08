@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="d-flex justify-content-between p-2">
+    <h3 class="titre">Ajout d'une image</h3>
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="row g-3 align-items-center">
+          <div class="col-auto">
+            <label for="fichier" class="col-form-label text-white">Image</label>
+          </div>
+          <div class="col-auto">
+            <input
+              id="fichier"
+              name="fichier"
+              type="file"
+              (change)="fileChangeEvent($event)"
+              class="form-control"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class="row liste">
+    <div class="col-8 text-center">
+      <image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="4 / 4"
+        format="png"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded($event)"
+        (cropperReady)="cropperReady()"
+        (loadImageFailed)="loadImageFailed()"
+      ></image-cropper>
+    </div>
+    @if(croppedImage !== ''){
+    <div class="col-4 text-center">
+      <img [src]="croppedImage" alt="image à découper" />
+    </div>
+    }
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col d-flex justify-content-end gap-1">
+      <button
+        type="button"
+        class="btn btn-success"
+        (click)="saveChanges()"
+        [disabled]="croppedImage === ''"
+      >
+        <i class="fa-solid fa-floppy-disk"></i> Enregistrer
+      </button>
+      <button type="button" class="btn btn-danger" (click)="onCancel()">
+        <i class="fa-solid fa-floppy-disk"></i> Annuler
+      </button>
+    </div>
+  </div>
+</div>

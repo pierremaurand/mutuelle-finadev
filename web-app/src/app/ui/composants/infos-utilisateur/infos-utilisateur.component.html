@@ -1,0 +1,22 @@
+<div class="container" *ngIf="utilisateur$ | async as user">
+  <div class="row">
+    <div class="col">
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <th>Login</th>
+            <td>{{ user.login }}</td>
+          </tr>
+          <tr>
+            <th>Nom</th>
+            <td>{{ user.nom }}</td>
+          </tr>
+          <tr>
+            <th>Sexe</th>
+            <td>{{ user.sexe ? "M" : "F" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

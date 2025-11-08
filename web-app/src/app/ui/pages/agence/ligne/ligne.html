@@ -1,0 +1,21 @@
+<div class="card shadow-sm mb-1 ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0 col-md-2">
+        <img
+          src="./assets/images/building.png"
+          class="rounded-circle"
+          alt="photo agence"
+          width="100%"
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div class="">{{agence.nom | uppercase }}</div>
+        <div class="text-primary">
+          <i class="fa-solid fa-users me-2"></i>{{ agence.membresActifs|
+          number}} Membres
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

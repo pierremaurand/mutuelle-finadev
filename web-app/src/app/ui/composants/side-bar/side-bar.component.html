@@ -1,0 +1,119 @@
+<div class="d-flex flex-column flex-shrink-0 container non-imprimable">
+  <h2 class="titre text-center">MEF</h2>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+        aria-current="page"
+      >
+        <i class="fa-solid fa-house me-2"></i>
+        Accueil
+      </a>
+    </li>
+    @if(user.role === 1) {
+    <li>
+      <a routerLink="/membre" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-users me-2"></i>
+        Membres
+      </a>
+    </li>
+    <li>
+      <a routerLink="/adhesion" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-user-check me-2"></i>
+        Adhésions
+      </a>
+    </li>
+    <li>
+      <a routerLink="/cotisation" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-coins me-2"></i>
+        Cotisations
+      </a>
+    </li>
+    <li>
+      <a routerLink="/avance" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-hand-holding-dollar me-2"></i>
+        Avances
+      </a>
+    </li>
+    <li>
+      <a routerLink="/credit" routerLinkActive="active" class="nav-link">
+        <i class="fa-brands fa-stack-overflow me-2"></i>
+        Crédits
+      </a>
+    </li>
+    } @if(caisse$ |async; as caisse){
+    <li>
+      <a
+        [routerLink]="'/caisse/view/' + caisse.id"
+        routerLinkActive="active"
+        class="nav-link"
+      >
+        <i class="fa-solid fa-cash-register me-2"></i>
+        Caisse
+      </a>
+    </li>
+    } @if(user.role === 1) {
+    <li>
+      <a routerLink="/caisse/liste" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-cash-register me-2"></i>
+        Caisses
+      </a>
+    </li>
+    <li>
+      <a routerLink="/utilisateur" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-users me-2"></i>
+        Utilisateurs
+      </a>
+    </li>
+    <li>
+      <a routerLink="/agence" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-building me-2"></i>
+        Agences
+      </a>
+    </li>
+    <li>
+      <a routerLink="/banque" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-building-columns me-2"></i>
+        Banques
+      </a>
+    </li>
+    }
+  </ul>
+  <hr />
+  @if(userInfos$ | async; as user){
+  <div class="dropdown">
+    <a
+      href="#"
+      class="d-flex align-items-center text-decoration-none dropdown-toggle"
+      id="dropdownUser1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <img
+        [src]="photo"
+        alt=""
+        width="32"
+        height="32"
+        class="rounded-circle me-2"
+      />
+      <strong>{{ user.login }}</strong>
+    </a>
+    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser1">
+      <li>
+        <a class="dropdown-item" routerLink="/home/profile"
+          ><i class="fa-solid fa-address-card me-2"></i> Profile</a
+        >
+      </li>
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <a routerLink="/auth/login" class="dropdown-item" (click)="logout()"
+          ><i class="fa-solid fa-right-from-bracket me-2"></i> Se déconnecté</a
+        >
+      </li>
+    </ul>
+  </div>
+  }
+</div>

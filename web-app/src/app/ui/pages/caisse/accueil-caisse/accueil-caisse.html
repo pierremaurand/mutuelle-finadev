@@ -1,0 +1,31 @@
+<div class="container non-imprimable">
+  @if(caisse$ | async; as caisse){
+  <div class="d-flex justify-content-between p-2 non-imprimable">
+    <h3 class="titre">Journal de caisse: {{caisse.nom | uppercase}}</h3>
+    @if(userInfos && userInfos.role === 1){
+    <button type="button" class="btn btn-danger" (click)="onCloture()">
+      Clôturer
+    </button>
+    }
+  </div>
+  <hr />
+  <div class="row">
+    @if(mouvements$ | async; as mouvements){
+    <div class="col-md-8 liste">
+      @for(mouvement of mouvements; track mouvement.id){
+      <app-ligne-mouvement
+        [mouvement]="mouvement"
+        (selectEvent)="onSelected($event)"
+      />
+      }
+    </div>
+    }
+    <div class="col-md-4">
+      @if(selectedMouvement){
+      <app-card-mouvement [mouvement]="selectedMouvement" [showAction]="true" />
+      }
+    </div>
+  </div>
+  }
+</div>
+<app-print-mouvement [mouvement]="selectedMouvement" />

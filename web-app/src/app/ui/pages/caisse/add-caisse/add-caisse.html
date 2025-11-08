@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="d-flex justify-content-between p-2">
+    <h3 class="titre">
+      <i class="fa fa-arrow-circle-left me-2 action" (click)="onCancel()"></i
+      >Infos caisse
+    </h3>
+  </div>
+  <hr />
+  <form [formGroup]="request" (ngSubmit)="submitForm()">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card shadow">
+          <div class="card-body">
+            <div class="row">
+              @if(utilisateurs$ | async; as utilisateurs){
+              <div class="col mb-3">
+                <label for="agentId" class="form-label">Nom de l'agent</label>
+                <select
+                  name="agentId"
+                  id="agentId"
+                  class="form-select {{ utilisateurClass }}"
+                  formControlName="agentId"
+                  placeholder="Sélectionner un agent..."
+                >
+                  <option value=""></option>
+                  @for(utilisateur of utilisateurs; track utilisateur.id){
+                  <option [value]="utilisateur.id">
+                    {{utilisateur.nom | uppercase}}
+                  </option>
+                  }
+                </select>
+                <div class="invalid-feedback">Le nom est obligatoire.</div>
+              </div>
+              }
+              <div class="col mb-3">
+                <label for="dateCaisse" class="form-label"
+                  >Date de la caisse</label
+                >
+                <input
+                  type="date"
+                  class="form-control {{ dateCaisseClass }}"
+                  name="dateCaisse"
+                  id="dateCaisse"
+                  placeholder="Date de la caisse..."
+                  formControlName="dateCaisse"
+                />
+                <div class="invalid-feedback">Le nom est obligatoire.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <app-card-caisse [caisse]="request.value" [showActions]="false" />
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="d-flex justify-content-end gap-1">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="request.invalid"
+        >
+          <i class="fa-solid fa-floppy-disk"></i> Enregistrer
+        </button>
+        <button class="btn btn-danger" type="button" (click)="onCancel()">
+          <i class="fa-solid fa-xmark"></i> Annuler
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

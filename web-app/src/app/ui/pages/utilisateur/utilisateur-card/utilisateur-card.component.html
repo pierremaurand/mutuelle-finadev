@@ -1,0 +1,57 @@
+<div class="card shadow">
+  <div class="card-img-wrapper">
+    <img
+      [src]="
+        utilisateur.photo
+          ? baseUrl + '/' + utilisateur.photo
+          : './assets/images/default_man.jpg'
+      "
+      class="card-img-top"
+      alt="photo utilisateur"
+    />
+    <ul class="list-inline text-center utilisateur-icons animate">
+      <li class="list-inline-item">
+        @if(utilisateur.estActif) {
+        <button
+          class="btn btn-danger form-control btn-sm"
+          type="button"
+          (click)="updateEtatUser()"
+        >
+          <i class="fa-solid fa-user-xmark"></i>
+        </button>
+        } @else {
+        <button
+          class="btn btn-success form-control btn-sm"
+          type="button"
+          (click)="updateEtatUser()"
+        >
+          <i class="fa-solid fa-user-check"></i>
+        </button>
+        }
+      </li>
+      <li class="list-inline-item">
+        <button
+          class="btn btn-warning form-control btn-sm"
+          type="button"
+          (click)="edit()"
+        >
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+      </li>
+
+      <li class="list-inline-item">
+        <button
+          class="btn btn-primary form-control btn-sm"
+          type="button"
+          (click)="view()"
+        >
+          <i class="fa-solid fa-eye"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card-body">
+    <h2 class="card-title text-truncate h6">{{ utilisateur.nom }}</h2>
+  </div>
+</div>

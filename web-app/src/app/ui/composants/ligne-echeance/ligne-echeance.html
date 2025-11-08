@@ -1,0 +1,82 @@
+<!-- <td class="text-center">
+  <input
+    class="form-check-input"
+    type="checkbox"
+    [checked]="echeance.checked"
+    (change)="onCheck(i, echeance, $event)"
+  />
+</td>
+<td class="text-center">
+  {{ echeance.dateEcheance | date : "dd/MM/yyyy" }}
+</td>
+<td class="text-end">
+  {{ echeance.montantInterets + echeance.montantCapital |
+  number }} FCFA
+</td>
+</tr> -->
+<div class="card shadow-sm mb-1">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-1 text-center align-content-center">
+        <input
+          id="echeance.id"
+          name="echeance.id"
+          title="echeance"
+          class="form-check-input"
+          type="checkbox"
+          [checked]="item.checked"
+          (change)="onCheck($event)"
+        />
+      </div>
+      @if(showInfosMembre){
+      <div class="col-md-1 align-content-center">
+        <img
+          [src]="photoMembre"
+          class="rounded-circle"
+          alt="image utilisateur"
+          width="100%"
+        />
+      </div>
+      <div class="col-md-3 align-content-center">
+        {{item.echeance.nom | uppercase}}
+      </div>
+      }
+      <div class="{{widthContent}} align-content-center">
+        <div class="row">
+          <div class="col-md-6">
+            <i class="fa-solid fa-calendar-days"></i> Echéance:
+            <span class="text-primary">
+              {{ item.echeance.dateEcheance | date:'dd/MM/yyyy' }}</span
+            >
+          </div>
+          <div class="col-md-6">
+            <i class="fa-solid fa-coins"></i> Capital:
+            <span class="text-primary"
+              >{{ item.echeance.montantCapital| number}} FCFA</span
+            >
+          </div>
+          @if(item.echeance.montantCommission){
+          <div class="col-md-6">
+            <i class="fa-solid fa-coins"></i> Comm:
+            <span class="text-primary"
+              >{{ item.echeance.montantCommission| number}} FCFA</span
+            >
+          </div>
+          <div class="col-md-6">
+            <i class="fa-solid fa-coins"></i> Intérêts:
+            <span class="text-primary"
+              >{{ item.echeance.montantInterets| number}} FCFA</span
+            >
+          </div>
+          <div class="col-md-6">
+            <i class="fa-solid fa-coins"></i> Total:
+            <span class="text-primary"
+              >{{ item.echeance.montantTotal| number}} FCFA</span
+            >
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

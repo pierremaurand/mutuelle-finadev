@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1 class="h3">Journal de caisse</h1>
+    <button class="btn btn-primary" type="button" (click)="add()">
+      Ajouter un mouvement
+    </button>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-9">
+      @if(mouvements$ | async; as mouvements){
+      <div class="d-flex flex-column gap-2 mb-3 liste">
+        @for(mouvement of mouvements | sort : ['id', 'desc']| sort :
+        ['dateMouvement', 'desc']; track mouvement.id){<app-ligne-mouvement
+          [mouvement]="mouvement"
+          (onSelectedEvent)="onSelected($event)"
+        ></app-ligne-mouvement
+        >}
+      </div>
+      }
+    </div>
+    <div class="col-md-3">
+      <app-infos [mouvement]="mouvement" />
+    </div>
+  </div>
+</div>

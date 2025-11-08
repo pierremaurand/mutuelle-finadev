@@ -1,0 +1,28 @@
+<div class="card shadow-sm mb-1 ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-1 align-content-center text-center">
+        @if(mouvement.montantCredit){
+        <i class="fa-solid fa-arrow-circle-down fs-5 text-success"></i>
+        } @else if(mouvement.montantDebit){
+        <i class="fa-solid fa-arrow-circle-up fs-5 text-danger"></i>
+        }
+      </div>
+      <div class="col-md-7">
+        @if(mouvement.libelle){
+        <div class="text-truncate">{{ mouvement.libelle | uppercase}}</div>
+        } @if(mouvement.dateMouvement){
+        <small class="text-muted me-2"
+          >{{ mouvement.dateMouvement | date:'dd/MM/yyyy'}}</small
+        >
+        }@if(mouvement.id){
+        <small class="text-primary">N°{{ mouvement.id | number}}</small>
+        }
+      </div>
+      <div class="col-md-4 text-end align-content-center">
+        @if(mouvement.montantCredit || mouvement.montantDebit){ {{ montant |
+        number}} FCFA }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+@mutuelleApi_HostAddress = http://localhost:5139
+
+GET {{mutuelleApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

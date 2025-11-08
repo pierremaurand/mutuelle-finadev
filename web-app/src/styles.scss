@@ -1,0 +1,102 @@
+body {
+  background-image: url(../public/assets/images/background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+hr {
+  margin-top: 0;
+}
+
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.membre-card:hover img {
+  transform: scale(1.2, 1.2);
+  transition-duration: 580ms;
+  transition-timing-function: ease-out;
+  opacity: 0.7;
+}
+
+.membre-card img {
+  transform: scale(1, 1);
+  transition-duration: 580ms;
+  transition-timing-function: ease-out;
+}
+
+.membre-icons {
+  position: absolute;
+  bottom: -10%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+
+.card-img-wrapper:hover .membre-icons {
+  opacity: 1;
+  bottom: 0;
+}
+
+.animate {
+  animation: all 0.5s ease-in-out;
+}
+
+//liste
+.liste {
+  height: 520px;
+  overflow-y: auto;
+}
+
+//Ligne
+.ligne {
+  cursor: pointer;
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.ligne:hover img {
+  border: black;
+}
+
+.ligne:hover {
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+  background-color: rgba(171, 244, 239, 0.829);
+}
+
+.ligne:hover .infos {
+  color: black;
+  text-shadow: 1px solid white;
+}
+
+.titre {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.action {
+  cursor: pointer;
+}
+
+.imprimable {
+  display: none !important;
+}
+
+//Impression
+
+@media print {
+  .non-imprimable {
+    display: none !important;
+  }
+
+  .imprimable {
+    display: block !important;
+  }
+}

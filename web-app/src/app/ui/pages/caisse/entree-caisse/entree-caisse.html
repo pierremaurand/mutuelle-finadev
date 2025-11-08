@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="d-flex justify-content-between p-2">
+    <h3 class="titre">Infos entrée de caisse</h3>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-12">
+      <form
+        [formGroup]="request"
+        (ngSubmit)="submitForm()"
+        (reset)="initForm()"
+      >
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card shadow">
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="montantCredit" class="form-label">Montant</label>
+                  <input
+                    type="number"
+                    class="form-control {{ montantClass }}"
+                    id="montantCredit"
+                    formControlName="montantCredit"
+                    placeholder="Montant..."
+                  />
+                  <div class="invalid-feedback">
+                    Le montant à crediter est invalid!
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="libelle" class="form-label">Libellé</label>
+                  <textarea
+                    class="form-control {{ libelleClass }}"
+                    formControlName="libelle"
+                    id="libelle"
+                    rows="3"
+                  ></textarea>
+                  <div class="invalid-feedback">Le libellé est requis!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <app-card-mouvement [mouvement]="request.value" />
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="d-flex justify-content-end gap-2 p-3">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!request.valid"
+            >
+              Enregistrer
+            </button>
+            <button type="reset" class="btn btn-primary">Effacer</button>
+            <button type="button" class="btn btn-danger" (click)="onCancel()">
+              Annuler
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

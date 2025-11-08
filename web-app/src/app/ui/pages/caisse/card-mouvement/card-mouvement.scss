@@ -1,0 +1,22 @@
+.card {
+  opacity: 0.9;
+}
+
+p {
+  height: 50px;
+  overflow-y: auto;
+}
+
+.imprimable {
+  display: none;
+}
+
+@media print {
+  div.non-imprimable {
+    display: none;
+  }
+
+  .imprimable {
+    display: block;
+  }
+}

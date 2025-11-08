@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row p-2">
+    <h3 class="titre">Profile utilisateur</h3>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-3">
+      @if(utilisateur$ | async; as utilisateur) {
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="d-flex justify-content-center">
+            <img
+              [src]="
+                utilisateur.photo ? baseUrl + '/' + utilisateur.photo : photo
+              "
+              class="rounded-circle"
+              alt="image utilisateur"
+              width="200"
+            />
+          </div>
+          <div class="row">
+            <div class="col-12 text-center text-truncate">
+              <h5>{{ utilisateur.login }}</h5>
+            </div>
+            <div class="col-12 text-center text-truncate">
+              <h6>{{ utilisateur.nom }}</h6>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center gap-1">
+            <button
+              type="button"
+              class="btn btn-warning"
+              (click)="onChangePassword()"
+            >
+              <i class="fa-solid fa-lock"></i> Password
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="onChangeImage()"
+            >
+              <i class="fa-solid fa-floppy-disk"></i> Image
+            </button>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="col-md-9">
+      <router-outlet />
+    </div>
+  </div>
+</div>

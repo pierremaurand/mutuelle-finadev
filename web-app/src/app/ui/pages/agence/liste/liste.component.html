@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="d-flex justify-content-between p-2">
+    <h1 class="h3 titre">Les agences</h1>
+    <button class="btn btn-primary" type="button" (click)="add(0)">
+      Ajouter une agence
+    </button>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-9 liste">
+      @if(agences$ | async; as agences){
+      <div class="row">
+        @for(agence of agences|sort:['nom','asc']; track agence.id) {
+        <div class="col-md-6">
+          <app-ligne [agence]="agence" (selectedEvent)="onSelected($event)" />
+        </div>
+        }
+      </div>
+      }
+    </div>
+    <div class="col-md-3">
+      <app-agence-card
+        [agence]="selectedAgence"
+        (editEvent)="onEdited($event)"
+        (viewEvent)="onViewed($event)"
+      />
+    </div>
+  </div>
+</div>

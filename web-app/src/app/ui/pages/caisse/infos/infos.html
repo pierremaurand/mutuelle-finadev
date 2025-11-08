@@ -1,0 +1,82 @@
+<div
+  class="card shadow-sm"
+  [ngClass]="{'border-danger': mouvement.montantDebit, 'border-success': mouvement.montantCredit}"
+  *ngIf="mouvement"
+>
+  <div class="card-body">
+    <div class="row">
+      <div class="col text-center">
+        <button
+          class="btn btn-sm rounded-circle"
+          [ngClass]="{'btn-danger': mouvement.montantDebit, 'btn-success': mouvement.montantCredit}"
+        >
+          <i
+            class="fa-solid"
+            [ngClass]="{'fa-arrow-up': mouvement.montantDebit, 'fa-arrow-down': mouvement.montantCredit}"
+          ></i>
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="col text-center">
+            <i class="fa-solid fa-tag text-info"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <p>{{ mouvement.libelle}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center text-primary">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="col">
+              {{ mouvement.dateMouvement | date:'dd/MM/yyyy'}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center text-success">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <i class="fa-solid fa-coins"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            {{ (mouvement.montantDebit?mouvement.montantDebit:
+            mouvement.montantCredit) | number}} FCFA
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row text-center text-danger"
+      *ngIf="mouvement.utilisateurLogin !== ''"
+    >
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <i class="fa-solid fa-circle-user"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">{{ mouvement.utilisateurLogin | uppercase}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+  <h5>Infos mouvement</h5>
+  <hr />
+  <form [formGroup]="request" (ngSubmit)="submitForm()">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card shadow">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4 form-floating mb-3">
+                <select
+                  name="typeMouvement"
+                  id="typeMouvement"
+                  class="form-select {{typeMouvementClasse}}"
+                  [formControl]="typeMouvementCtrl"
+                >
+                  <option value="">Type de mouvement</option>
+                  <option value="1">Entrée de caisse</option>
+                  <option value="2">Sortie de caisse</option>
+                </select>
+                <label for="typeMouvement">Type de mouvement</label>
+                <div class="invalid-feedback">Le type est requis!</div>
+              </div>
+              <div class="col-md-4 form-floating mb-3">
+                <input
+                  type="date"
+                  name="dateMouvement"
+                  id="dateMouvement"
+                  class="form-control {{dateMouvementClasse}}"
+                  formControlName="dateMouvement"
+                />
+                <label for="dateMouvement">Date mouvement</label>
+                <div class="invalid-feedback">La date est requise!</div>
+              </div>
+              <div class="col-md-4 form-floating mb-3">
+                <input
+                  type="number"
+                  name="montant"
+                  id="montant"
+                  class="form-control {{montantClasse}}"
+                  [formControl]="montantCtrl"
+                  placeholder="Montant"
+                />
+                <label for="montant">Montant</label>
+                <div class="invalid-feedback">Le montant est requis!</div>
+              </div>
+              <div class="col form-floating mb-3">
+                <textarea
+                  name="libelle"
+                  id="libelle"
+                  rows="5"
+                  class="form-control {{libelleClasse}}"
+                  formControlName="libelle"
+                  placeholder="Libellé"
+                ></textarea>
+                <label for="libelle">Libellé</label>
+                <div class="invalid-feedback">Le libellé est requis!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <app-infos [mouvement]="request.value" />
+      </div>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-end gap-1">
+      <button class="btn btn-primary" type="submit" [disabled]="!request.valid">
+        <i class="fa-solid fa-floppy-disk"></i> Enregistrer
+      </button>
+      <button class="btn btn-danger" type="button" (click)="onCancel()">
+        <i class="fa-solid fa-xmark"></i> Annuler
+      </button>
+    </div>
+  </form>
+</div>

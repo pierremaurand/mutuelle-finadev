@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="d-flex justify-content-between p-2">
+    <h3 class="titre">Les caisses</h3>
+    <button class="btn btn-primary" type="button" (click)="add(0)">
+      Ajouter une caisse
+    </button>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-9 liste">
+      <div class="row">
+        @if(caisses$ | async; as caisses){ @for(caisse of
+        caisses|sort:['nom','asc']; track caisse.id) {
+        <div class="col-md-6">
+          <app-ligne-caisse
+            [caisse]="caisse"
+            (selectedEvent)="onSelected($event)"
+          />
+        </div>
+        } }
+      </div>
+    </div>
+    <div class="col-md-3">
+      <app-card-caisse
+        [caisse]="selectedCaisse"
+        (editEvent)="onEdited($event)"
+        (viewEvent)="onViewed($event)"
+      />
+    </div>
+  </div>
+</div>

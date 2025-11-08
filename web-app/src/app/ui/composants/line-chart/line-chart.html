@@ -1,0 +1,16 @@
+<canvas
+  height="250px"
+  baseChart
+  [data]="chartData"
+  [options]="{
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }"
+  [type]="'line'"
+>
+</canvas>

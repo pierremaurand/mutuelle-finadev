@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="d-flex justify-content-between p-2">
+    <h3 class="titre">Les cotisations</h3>
+    <button class="btn btn-primary" type="button" (click)="add()">
+      Ajouter une cotisation
+    </button>
+  </div>
+  <hr />
+  <div class="row">
+    @if(cotisations$ | async; as cotisations) {
+    <div class="col-md-9 liste">
+      <div class="row">
+        @for(cotisation of cotisations| sort : ['dateCotisation', 'desc'] | sort
+        : ['nom', 'asc']; track cotisation.id){
+        <div class="col-md-6">
+          <app-ligne
+            [cotisation]="cotisation"
+            (selectedEvent)="onCotisationSelected($event)"
+          />
+        </div>
+        }
+      </div>
+    </div>
+    } @if(selectedCotisation) {
+    <div class="col-md-3">
+      <app-membre-card
+        [membre]="selectedCotisation"
+        [showInfosMembre]="false"
+      />
+    </div>
+    }
+  </div>
+</div>

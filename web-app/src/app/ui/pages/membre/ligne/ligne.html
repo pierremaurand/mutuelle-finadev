@@ -1,0 +1,25 @@
+@if(membre) {
+<div class="card shadow-sm mb-1 {{border}} ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0 col-md-2">
+        <img
+          [src]="membre.photo ? baseUrl + '/' + membre.photo : photo"
+          class="rounded-circle"
+          alt="photo membre"
+          width="100%"
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div class="{{color}} small">{{membre.nom | uppercase }}</div>
+        <div class="{{color}}">
+          <i class="fa-solid {{sexeIcon}}"></i> {{membre.nomSexe }}
+        </div>
+        <div class="text-primary small">
+          <i class="fa-solid fa-building"></i> {{membre.nomAgence | uppercase }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

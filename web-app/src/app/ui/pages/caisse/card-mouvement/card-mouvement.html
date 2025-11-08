@@ -1,0 +1,43 @@
+@if(mouvement){
+<div class="card shadow">
+  <div class="card-body">
+    <div class="text-center">
+      @if(mouvement.montantDebit){
+      <i class="fa-solid fa-arrow-circle-up text-danger fs-1"></i>
+      } @else if(mouvement.montantCredit){
+      <i class="fa-solid fa-arrow-circle-down text-success fs-1"></i>}
+    </div>
+    <hr />
+    @if(mouvement.id) {
+    <div class="text-center">
+      <span class="text-primary">N°{{ mouvement.id | number}}</span>
+    </div>
+    } @if(mouvement.dateMouvement){
+    <div class="d-flex justify-content-center align-items-center gap-2">
+      <i class="fa-solid fa-calendar text-primary"></i>
+      {{ mouvement.dateMouvement | date:'dd/MM/yyyy'}}
+    </div>
+    }@if(mouvement.montantCredit || mouvement.montantDebit){
+    <div class="d-flex justify-content-center align-items-center gap-2">
+      <i class="fa-solid fa-coins text-danger"></i>
+      <span>{{ montant | number}} FCFA</span>
+    </div>
+    } @if(mouvement.libelle){
+    <div class="d-flex flex-column">
+      <div class="text-center">
+        <i class="fa-solid fa-tag text-info"></i>
+      </div>
+      <p class="text-center">{{ mouvement.libelle | uppercase}}</p>
+    </div>
+    } @if(showAction) {
+    <div class="d-flex justify-content-center gap-2">
+      @if(mouvement.id) {
+      <button type="button" class="btn btn-warning" (click)="onPrint()">
+        <i class="fa-solid fa-print"></i>
+      </button>
+      }
+    </div>
+    }
+  </div>
+</div>
+}

@@ -1,0 +1,20 @@
+<div class="card shadow-sm mb-1 ligne" (click)="onSelected()">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0 col-md-2">
+        <img
+          src="./assets/images/building.png"
+          class="rounded-circle"
+          alt="photo banque"
+          width="100%"
+        />
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div class="">{{banque.nom | uppercase }}</div>
+        <div class="text-success">
+          <i class="fa-solid fa-coins"></i> {{ banque.solde??0| number}} FCFA
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

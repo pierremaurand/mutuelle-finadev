@@ -1,0 +1,23 @@
+<div class="d-flex flex-row">
+  <div class="col-md-3 non-imprimable">
+    @if(caisse$ | async; as caisse){
+    <div class="d-flex flex-column">
+      <div class="p-2">
+        <app-widget [label]="labelSolde" [value]="caisse.solde??0" />
+      </div>
+      <div class="p-2">
+        <div class="card menu">
+          <div class="card-body">
+            <h4>{{caisse.dateCaisse | date: 'dd/MM/yyyy'}}</h4>
+            <hr />
+            <app-menu [caisse]="caisse!" [user]="user" />
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="col-md-9 flex-fill">
+    <router-outlet />
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+  @if(mouvements$ | async; as mouvements){
+  <div class="col-md-8 liste">
+    @for(mouvement of mouvements; track mouvement.id){
+    <app-ligne-mouvement
+      [mouvement]="mouvement"
+      (selectEvent)="onSelected($event)"
+    />
+    }
+  </div>
+  }
+  <div class="col-md-4">
+    @if(selectedMouvement){
+    <app-card-mouvement [mouvement]="selectedMouvement" [showAction]="true" />
+    }
+  </div>
+</div>

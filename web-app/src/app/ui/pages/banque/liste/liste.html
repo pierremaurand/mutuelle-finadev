@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="d-flex justify-content-between p-2">
+    <h1 class="h3 titre">Les banques</h1>
+    <button class="btn btn-primary" type="button" (click)="add(0)">
+      Ajouter une banque
+    </button>
+  </div>
+  <hr />
+  <div class="row">
+    @if(banques$ | async; as banques){
+    <div class="col-md-9 liste">
+      <div class="row">
+        @for(banque of banques|sort:['nom','asc']; track banque.id) {
+        <div class="col-md-6">
+          <app-ligne [banque]="banque" (selectedEvent)="onSelected($event)" />
+        </div>
+        }
+      </div>
+    </div>
+    } @if(selectedBanque) {
+    <div class="col-md-3">
+      <app-card
+        [banque]="selectedBanque"
+        (editEvent)="onEdited($event)"
+        (viewEvent)="onViewed($event)"
+      />
+    </div>
+    }
+  </div>
+</div>

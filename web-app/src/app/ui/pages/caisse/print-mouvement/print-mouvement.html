@@ -1,0 +1,35 @@
+@if(mouvement) {
+<div class="imprimable">
+  <div class="d-flex justify-content-between align-items-center p-2">
+    <div class="col">
+      <h1 class="titre">MEF</h1>
+    </div>
+    <div class="col">
+      <h6 class="text-end"><strong class="me-2">N°</strong>{{mouvement.id}}</h6>
+      <h6 class="text-end">
+        <strong class="me-2">DATE:</strong>{{ mouvement.dateMouvement | date:
+        'dd/MM/yyyy' }}
+      </h6>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col">
+      <h2 class="text-center text-decoration-underline">
+        {{titre + ' de caisse' | uppercase}}
+      </h2>
+    </div>
+  </div>
+  <p class="text-center me-3">
+    <strong class="me-2">MOTIF:</strong>{{ mouvement.libelle | uppercase}}
+  </p>
+  <div class="text-center">
+    <strong class="me-2">MONTANT:</strong>{{ montant | number }} FCFA <br />
+    <p class="fst-italic">{{ montantEnLettres | uppercase }}</p>
+  </div>
+  <div class="d-flex justify-content-between align-items-center mt-5">
+    <div class="col text-decoration-underline">La caisse</div>
+    <div class="col text-decoration-underline text-end">Le bénéficiaire</div>
+  </div>
+</div>
+
+}
