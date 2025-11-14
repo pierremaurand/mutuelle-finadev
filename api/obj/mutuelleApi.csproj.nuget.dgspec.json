@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/maurand/development/MesProjets/mutuelles_v2/mutuelleApi/mutuelleApi.csproj": {}
+    "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\mutuelleApi.csproj": {}
   },
   "projects": {
-    "/Users/maurand/development/MesProjets/mutuelles_v2/mutuelleApi/mutuelleApi.csproj": {
+    "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\mutuelleApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/maurand/development/MesProjets/mutuelles_v2/mutuelleApi/mutuelleApi.csproj",
+        "projectUniqueName": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\mutuelleApi.csproj",
         "projectName": "mutuelleApi",
-        "projectPath": "/Users/maurand/development/MesProjets/mutuelles_v2/mutuelleApi/mutuelleApi.csproj",
-        "packagesPath": "/Users/maurand/.nuget/packages/",
-        "outputPath": "/Users/maurand/development/MesProjets/mutuelles_v2/mutuelleApi/obj/",
+        "projectPath": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\mutuelleApi.csproj",
+        "packagesPath": "C:\\Users\\MAURAND\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/maurand/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\MAURAND\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -106,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
