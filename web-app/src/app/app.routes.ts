@@ -66,6 +66,13 @@ export const routes: Routes = [
             (m) => m.CreditModule
           ),
       },
+       {
+        path: 'rapports',
+        loadChildren: () =>
+          import('./ui/modules/rapports/rapports-module').then(
+            (m) => m.RapportsModule
+          ),
+      },
       {
         path: 'caisse',
         loadChildren: () =>
