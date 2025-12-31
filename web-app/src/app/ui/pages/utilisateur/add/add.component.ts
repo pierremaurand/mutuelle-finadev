@@ -3,7 +3,7 @@ import { UtilisateurService } from './../../../../core/services/utilisateur.serv
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserInfos } from '../../../../core/models/user-infos';
-import { CommonModule } from '@angular/common';
+
 import {
   FormBuilder,
   FormGroup,
@@ -21,7 +21,7 @@ import { Role } from '../../../../core/models/role';
 
 @Component({
   selector: 'app-add',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './add.component.html',
   styleUrl: './add.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

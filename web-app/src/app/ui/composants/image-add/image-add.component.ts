@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import {
@@ -23,7 +23,7 @@ import { UtilisateurRequest } from '../../../core/models/utilisateur-request';
 
 @Component({
   selector: 'app-image-add',
-  imports: [CommonModule, ImageCropperComponent],
+  imports: [ImageCropperComponent],
   templateUrl: './image-add.component.html',
   styleUrl: './image-add.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

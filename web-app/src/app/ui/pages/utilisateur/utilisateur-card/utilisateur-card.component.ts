@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UserInfos } from '../../../../core/models/user-infos';
 import { environment } from '../../../../../environments/environment';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-utilisateur-card',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './utilisateur-card.component.html',
   styleUrl: './utilisateur-card.component.scss',
 })

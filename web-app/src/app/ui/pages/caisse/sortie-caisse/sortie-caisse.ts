@@ -12,7 +12,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { CaisseService } from '../../../../core/services/caisse.service';
@@ -22,7 +22,7 @@ import { Mouvement } from '../../../../core/models/mouvement';
 
 @Component({
   selector: 'app-sortie-caisse',
-  imports: [ReactiveFormsModule, CommonModule, CardMouvement],
+  imports: [ReactiveFormsModule, CardMouvement],
   templateUrl: './sortie-caisse.html',
   styleUrl: './sortie-caisse.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

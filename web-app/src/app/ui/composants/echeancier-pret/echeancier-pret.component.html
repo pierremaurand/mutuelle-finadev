@@ -6,48 +6,56 @@
           <th class="text-center">N°</th>
           <th class="text-center">Date</th>
           @if(echeancierCredit) {
-          <th class="text-center">Capital</th>
-          } @if(echeancierCredit) {
-          <th class="text-center" *ngIf="echeancierCredit">Commission</th>
-          <th class="text-center" *ngIf="echeancierCredit">Intérets</th>
+            <th class="text-center">Capital</th>
+            } @if(echeancierCredit) {
+            @if (echeancierCredit) {
+              <th class="text-center">Commission</th>
+            }
+            @if (echeancierCredit) {
+              <th class="text-center">Intérets</th>
+            }
           }
           <th class="text-center">Montant échéance</th>
           @if(echeancierView) {
-          <th class="text-center" *ngIf="echeancierView">Etat</th>
+            @if (echeancierView) {
+              <th class="text-center">Etat</th>
+            }
           }
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let echeance of echeancier; let i = index">
-          <td class="text-center">{{ 1 + i }}</td>
-          <td class="text-center">
-            {{ echeance.dateEcheance | date : "dd/MM/yyyy" }}
-          </td>
-          @if(echeancierCredit){
-          <td class="text-end">{{ echeance.montantCapital | number }} FCFA</td>
-          <td class="text-end">
-            {{ echeance.montantCommission | number }} FCFA
-          </td>
-          <td class="text-end">{{ echeance.montantInterets | number }} FCFA</td>
-          }
-          <td class="text-end">
-            {{
+        @for (echeance of echeancier; track echeance; let i = $index) {
+          <tr>
+            <td class="text-center">{{ 1 + i }}</td>
+            <td class="text-center">
+              {{ echeance.dateEcheance | date : "dd/MM/yyyy" }}
+            </td>
+            @if(echeancierCredit){
+              <td class="text-end">{{ echeance.montantCapital | number }} FCFA</td>
+              <td class="text-end">
+                {{ echeance.montantCommission | number }} FCFA
+              </td>
+              <td class="text-end">{{ echeance.montantInterets | number }} FCFA</td>
+            }
+            <td class="text-end">
+              {{
               (echeance.montantCapital ?? 0) +
-                (echeance.montantCommission ?? 0) +
-                (echeance.montantInterets ?? 0) | number
-            }}
-            FCFA
-          </td>
-          @if(echeancierView){
-          <td
+              (echeance.montantCommission ?? 0) +
+              (echeance.montantInterets ?? 0) | number
+              }}
+              FCFA
+            </td>
+            @if(echeancierView){
+              <td
             class="text-center text-{{
               echeance.status !== 'Impayée' ? 'success' : 'danger'
             }}"
-          >
-            {{ echeance.status }}
-          </td>
-          }
-        </tr>
+                >
+                {{ echeance.status }}
+              </td>
+            }
+          </tr>
+        }
       </tbody>
     </table>
   </div>

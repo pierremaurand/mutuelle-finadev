@@ -10,13 +10,13 @@ import { Agence } from '../../../../core/models/agence';
 import { AgenceService } from '../../../../core/services/agence.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CommonModule } from '@angular/common';
+
 import { Card } from '../../banque/card/card';
 import { AgenceCardComponent } from '../agence-card/agence-card.component';
 
 @Component({
   selector: 'app-add',
-  imports: [ReactiveFormsModule, CommonModule, AgenceCardComponent],
+  imports: [ReactiveFormsModule, AgenceCardComponent],
   templateUrl: './add.component.html',
   styleUrl: './add.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,5 +1,5 @@
 import { AuthService } from './../../../../core/services/auth.service';
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-change-password',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './change-password.component.html',
   styleUrl: './change-password.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

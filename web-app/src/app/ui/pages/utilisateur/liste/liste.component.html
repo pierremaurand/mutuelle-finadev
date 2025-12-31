@@ -5,22 +5,28 @@
       class="btn btn-primary"
       type="button"
       (click)="ajouterUtilisateur(0)"
-    >
+      >
       Ajouter un utilisateur
     </button>
   </div>
   <hr />
-  <div class="row" *ngIf="utilisateurs$ | async as utilisateurs">
-    <div class="col-md-2 mb-3 liste" *ngFor="let utilisateur of utilisateurs">
-      <app-utilisateur-card
-        [utilisateur]="utilisateur"
-        (updateInfos)="updateInfos($event)"
-        (editUser)="editUser($event)"
-        (viewUser)="viewUser($event)"
-      ></app-utilisateur-card>
+  @if (utilisateurs$ | async; as utilisateurs) {
+    <div class="row">
+      @for (utilisateur of utilisateurs; track utilisateur) {
+        <div class="col-md-2 mb-3 liste">
+          <app-utilisateur-card
+            [utilisateur]="utilisateur"
+            (updateInfos)="updateInfos($event)"
+            (editUser)="editUser($event)"
+            (viewUser)="viewUser($event)"
+          ></app-utilisateur-card>
+        </div>
+      }
+      @if (utilisateurs.length == 0) {
+        <div class="col">
+          <h2 class="text-center">Aucun utilisateur n'a été trouvé dans la base</h2>
+        </div>
+      }
     </div>
-    <div class="col" *ngIf="utilisateurs.length == 0">
-      <h2 class="text-center">Aucun utilisateur n'a été trouvé dans la base</h2>
-    </div>
-  </div>
+  }
 </div>

@@ -1,20 +1,22 @@
-<div class="container" *ngIf="utilisateur$ | async as user">
-  <div class="row">
-    <h1 class="h3">Infos utilisateur</h1>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <img
-        [src]="user.photo ? baseUrl + '/' + user.photo : photo"
-        class="card-img-top"
-        alt="image user"
-        data-bs-toggle="modal"
-        data-bs-target="#addPicture"
-        width="200"
-      />
+@if (utilisateur$ | async; as user) {
+  <div class="container">
+    <div class="row">
+      <h1 class="h3">Infos utilisateur</h1>
     </div>
-    <div class="col-md-10">
-      <app-infos-utilisateur />
+    <div class="row">
+      <div class="col-md-2">
+        <img
+          [src]="user.photo ? baseUrl + '/' + user.photo : photo"
+          class="card-img-top"
+          alt="image user"
+          data-bs-toggle="modal"
+          data-bs-target="#addPicture"
+          width="200"
+          />
+      </div>
+      <div class="col-md-10">
+        <app-infos-utilisateur />
+      </div>
     </div>
   </div>
-</div>
+}

@@ -1,28 +1,30 @@
-<div class="container" *ngIf="membres$ | async as membres">
-  <div class="d-flex justify-content-between p-2">
-    <h3 class="titre">
-      <i class="fa fa-arrow-circle-left me-2 action" (click)="onCancel()"></i
-      >Nouvelles adhésions
-    </h3>
-    <div class="row g-3 align-items-center"></div>
-  </div>
-  <hr />
-  <form [formGroup]="request" (ngSubmit)="submitForm()">
-    <div formArrayName="lines" class="row liste">
-      @for(membre of membres; track membre.id){
-      <div class="col-md-6">
-        <app-ligne [adhesion]="membre" />
+@if (membres$ | async; as membres) {
+  <div class="container">
+    <div class="d-flex justify-content-between p-2">
+      <h3 class="titre">
+        <i class="fa fa-arrow-circle-left me-2 action" (click)="onCancel()"></i
+          >Nouvelles adhésions
+        </h3>
+        <div class="row g-3 align-items-center"></div>
       </div>
-      }
+      <hr />
+      <form [formGroup]="request" (ngSubmit)="submitForm()">
+        <div formArrayName="lines" class="row liste">
+          @for(membre of membres; track membre.id){
+            <div class="col-md-6">
+              <app-ligne [adhesion]="membre" />
+            </div>
+          }
+        </div>
+        <hr />
+        <div class="d-flex justify-content-end gap-1">
+          <button class="btn btn-primary" type="submit" [disabled]="!request.valid">
+            <i class="fa-solid fa-floppy-disk"></i> Enregistrer
+          </button>
+          <button class="btn btn-danger" type="button" (click)="onCancel()">
+            <i class="fa-solid fa-xmark"></i> Annuler
+          </button>
+        </div>
+      </form>
     </div>
-    <hr />
-    <div class="d-flex justify-content-end gap-1">
-      <button class="btn btn-primary" type="submit" [disabled]="!request.valid">
-        <i class="fa-solid fa-floppy-disk"></i> Enregistrer
-      </button>
-      <button class="btn btn-danger" type="button" (click)="onCancel()">
-        <i class="fa-solid fa-xmark"></i> Annuler
-      </button>
-    </div>
-  </form>
-</div>
+  }

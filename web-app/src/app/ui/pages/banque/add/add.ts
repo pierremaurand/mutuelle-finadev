@@ -10,12 +10,12 @@ import { Banque } from '../../../../core/models/banque';
 import { BanqueService } from '../../../../core/services/banque.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CommonModule } from '@angular/common';
+
 import { Card } from '../../banque/card/card';
 
 @Component({
   selector: 'app-add',
-  imports: [ReactiveFormsModule, CommonModule, Card],
+  imports: [ReactiveFormsModule, Card],
   templateUrl: './add.html',
   styleUrl: './add.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

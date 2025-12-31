@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MembreService } from '../../../../core/services/membre.service';
-import { CommonModule } from '@angular/common';
+
 import { combineLatest, map, Observable, tap } from 'rxjs';
 import { Membre } from '../../../../core/models/membre';
 import { LineChart } from '../../../composants/line-chart/line-chart';
@@ -12,7 +12,7 @@ import { MouvementService } from '../../../../core/services/mouvement.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, LineChart, PieChart, Widget],
+  imports: [LineChart, PieChart, Widget],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
