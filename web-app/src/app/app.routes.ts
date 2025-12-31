@@ -4,12 +4,16 @@ import { authGuard } from './core/guard/auth.guard';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./core/layout/layout/layout.component'),
-    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./ui/modules/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'mef',
+    loadComponent: () => import('./core/layout/layout.component'),
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: '/mef/home',
         pathMatch: 'full',
       },
       {
@@ -66,7 +70,7 @@ export const routes: Routes = [
             (m) => m.CreditModule
           ),
       },
-       {
+      {
         path: 'rapports',
         loadChildren: () =>
           import('./ui/modules/rapports/rapports-module').then(
@@ -90,7 +94,7 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'login',
+    path: '**',
     loadChildren: () =>
       import('./ui/modules/auth/auth.module').then((m) => m.AuthModule),
   },

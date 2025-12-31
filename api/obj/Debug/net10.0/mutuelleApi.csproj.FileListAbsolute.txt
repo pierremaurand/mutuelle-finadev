@@ -172,3 +172,4 @@ C:\Users\MAURAND\Documents\Travail\Projects\mutuelle-finadev\api\obj\Debug\net10
 C:\Users\MAURAND\Documents\Travail\Projects\mutuelle-finadev\api\obj\Debug\net10.0\mutuelleApi.pdb
 C:\Users\MAURAND\Documents\Travail\Projects\mutuelle-finadev\api\obj\Debug\net10.0\mutuelleApi.genruntimeconfig.cache
 C:\Users\MAURAND\Documents\Travail\Projects\mutuelle-finadev\api\obj\Debug\net10.0\ref\mutuelleApi.dll
+C:\Users\MAURAND\Documents\Travail\Projects\mutuelle-finadev\api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

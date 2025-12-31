@@ -1,17 +1,12 @@
-import { LoadingService } from './../services/loading.service';
-import { TokenService } from './../token/token.service';
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { catchError, tap, throwError } from 'rxjs';
-import { AuthService } from '../services/auth.service';
-import { TokenRequest } from '../models/token-request';
-import { LoadImageService } from 'ngx-image-cropper';
+import { catchError, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 export const httpTokenInterceptor: HttpInterceptorFn = (req, next) => {
-  const tokenService = inject(TokenService);
-  const authService = inject(AuthService);
+  const router = inject(Router);
+  const token = localStorage.getItem('token');
 
-  const token = tokenService.token;
   if (token) {
     req = req.clone({
       setHeaders: {
@@ -22,25 +17,11 @@ export const httpTokenInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(req).pipe(
     catchError((error) => {
-      if (error.status === 401) {
-        authService
-          .refreshToken(tokenService.tokenData as TokenRequest)
-          .subscribe({
-            next: (response) => {
-              tokenService.token = response.token as string;
-              tokenService.refreshToken = response.refreshToken as string;
-              tokenService.tokenData = response;
-              const clonedReq = req.clone({
-                setHeaders: {
-                  Authorization: `Bearer ${response.token}`,
-                },
-              });
-              next(clonedReq);
-            },
-            error: () => {
-              tokenService.logout();
-            },
-          });
+      if (error.status === 401 || error.status === 403) {
+        if(router.url !== '/login') {
+          localStorage.clear();
+          router.navigate(['/login']);
+        }
       }
       return throwError(() => error);
     })

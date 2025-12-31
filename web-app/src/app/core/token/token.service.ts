@@ -18,22 +18,6 @@ export class TokenService {
     return localStorage.getItem('token') as string;
   }
 
-  set refreshToken(token: string) {
-    localStorage.setItem('refresh-token', token);
-  }
-
-  get refreshToken(): string {
-    return localStorage.getItem('refresh-token') as string;
-  }
-
-  set tokenData(authResponse: AuthResponse) {
-    localStorage.setItem('tokenData', JSON.stringify(authResponse));
-  }
-
-  get tokenData(): AuthResponse {
-    return JSON.parse(localStorage.getItem('tokenData') ?? '') as AuthResponse;
-  }
-
   logout(): void {
     localStorage.clear();
     this.router.navigate(['/login']);

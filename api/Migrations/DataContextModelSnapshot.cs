@@ -80,6 +80,48 @@ namespace mutuelleApi.Migrations
                     b.ToTable("Agences");
                 });
 
+            modelBuilder.Entity("mutuelleApi.models.Assistance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("DateAssistance")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MembreId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ModifieLe")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ModifiePar")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Montant")
+                        .HasColumnType("float");
+
+                    b.Property<string>("MotifAssistance")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MouvementId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MembreId");
+
+                    b.HasIndex("ModifiePar");
+
+                    b.HasIndex("MouvementId");
+
+                    b.ToTable("Assistances");
+                });
+
             modelBuilder.Entity("mutuelleApi.models.Avance", b =>
                 {
                     b.Property<int>("Id")
@@ -464,12 +506,6 @@ namespace mutuelleApi.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<DateTime?>("DateExpirationToken")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("EstActif")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Login")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -489,16 +525,20 @@ namespace mutuelleApi.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Photo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RefreshToken")
+                    b.Property<string>("Role")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
+                    b.Property<string>("Sexe")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Sexe")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -527,6 +567,29 @@ namespace mutuelleApi.Migrations
                     b.HasOne("mutuelleApi.models.Utilisateur", "Utilisateur")
                         .WithMany()
                         .HasForeignKey("ModifiePar");
+
+                    b.Navigation("Utilisateur");
+                });
+
+            modelBuilder.Entity("mutuelleApi.models.Assistance", b =>
+                {
+                    b.HasOne("mutuelleApi.models.Membre", "Membre")
+                        .WithMany()
+                        .HasForeignKey("MembreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("mutuelleApi.models.Utilisateur", "Utilisateur")
+                        .WithMany()
+                        .HasForeignKey("ModifiePar");
+
+                    b.HasOne("mutuelleApi.models.Mouvement", "Mouvement")
+                        .WithMany()
+                        .HasForeignKey("MouvementId");
+
+                    b.Navigation("Membre");
+
+                    b.Navigation("Mouvement");
 
                     b.Navigation("Utilisateur");
                 });

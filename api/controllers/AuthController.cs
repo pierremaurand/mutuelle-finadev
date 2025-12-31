@@ -43,35 +43,36 @@ namespace mutuelleApi.controllers
             var authResponseDto = new AuthResponseDto();
             authResponseDto.Login = utilisateur.Login;
             authResponseDto.Token = CreateJWT(utilisateur, 1);
-            authResponseDto.RefreshToken = GenerateRefreshToken();
-            utilisateur.RefreshToken = authResponseDto.RefreshToken;
-            utilisateur.DateExpirationToken = DateTime.UtcNow.AddDays(7);
+            // authResponseDto.RefreshToken = GenerateRefreshToken();
+            // utilisateur.RefreshToken = authResponseDto.RefreshToken;
+            // utilisateur.DateExpirationToken = DateTime.UtcNow.AddDays(7);
             await uow.SaveAsync();
 
             return Ok(authResponseDto);
         }
 
-        [HttpPost("refresh-token")]
-        [AllowAnonymous]
-        public async Task<IActionResult> RefreshToken(TokenRequestDto request)
-        {
-            var principal = GetPrincipalFromExpiredToken(request.Token);
-            var utilisateur = await uow.UtilisateurRepository.GetByLoginAsync(request.Login);
-            if (utilisateur is null || principal is null || utilisateur.RefreshToken != request.RefreshToken || utilisateur.DateExpirationToken <= DateTime.UtcNow)
-            {
-                return BadRequest("Utilisateur non trouvé!");
-            }
+        // [HttpPost("refresh-token")]
+        // [AllowAnonymous]
+        // public async Task<IActionResult> RefreshToken(TokenRequestDto request)
+        // {
+        //     var principal = GetPrincipalFromExpiredToken(request.Token);
+        //     Console.Write("Principal: " + principal);
+        //     var utilisateur = await uow.UtilisateurRepository.GetByLoginAsync(request.Login);
+        //     if (utilisateur is null || principal is null || utilisateur.RefreshToken != request.RefreshToken || utilisateur.DateExpirationToken <= DateTime.UtcNow)
+        //     {
+        //         return BadRequest("Utilisateur non trouvé!");
+        //     }
 
-            var authResponseDto = new AuthResponseDto();
-            authResponseDto.Login = utilisateur.Login;
-            authResponseDto.Token = CreateJWT(utilisateur, 1);
-            authResponseDto.RefreshToken = GenerateRefreshToken();
-            utilisateur.RefreshToken = authResponseDto.RefreshToken;
-            utilisateur.DateExpirationToken = DateTime.UtcNow.AddDays(7);
-            await uow.SaveAsync();
+        //     var authResponseDto = new AuthResponseDto();
+        //     authResponseDto.Login = utilisateur.Login;
+        //     authResponseDto.Token = CreateJWT(utilisateur, 1);
+        //     authResponseDto.RefreshToken = GenerateRefreshToken();
+        //     utilisateur.RefreshToken = authResponseDto.RefreshToken;
+        //     utilisateur.DateExpirationToken = DateTime.UtcNow.AddDays(7);
+        //     await uow.SaveAsync();
 
-            return Ok(authResponseDto);
-        }
+        //     return Ok(authResponseDto);
+        // }
 
         private ClaimsPrincipal? GetPrincipalFromExpiredToken(string token)
         {
@@ -93,15 +94,15 @@ namespace mutuelleApi.controllers
             return principal;
         }
 
-        private string GenerateRefreshToken()
-        {
-            var randomNumber = new byte[32];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(randomNumber);
-                return Convert.ToBase64String(randomNumber);
-            }
-        }
+        // private string GenerateRefreshToken()
+        // {
+        //     var randomNumber = new byte[32];
+        //     using (var rng = RandomNumberGenerator.Create())
+        //     {
+        //         rng.GetBytes(randomNumber);
+        //         return Convert.ToBase64String(randomNumber);
+        //     }
+        // }
 
 
         [HttpGet]
@@ -114,7 +115,7 @@ namespace mutuelleApi.controllers
                 return NotFound("Cet utilisateur n'existe pas!");
             }
 
-            var utilisateurDto = mapper.Map<UtilisateurDto>(utilisateur);
+            var utilisateurDto = mapper.Map<UserDto>(utilisateur);
             return Ok(utilisateurDto);
         }
 
@@ -165,6 +166,7 @@ namespace mutuelleApi.controllers
             }
 
             claims.Add(new Claim(ClaimTypes.NameIdentifier, utilisateur.Id.ToString()));
+            claims.Add(new Claim(ClaimTypes.Role, utilisateur.Role));
 
             var signingCredentials = new SigningCredentials(
                 key, SecurityAlgorithms.HmacSha256Signature

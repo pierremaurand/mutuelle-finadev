@@ -19,7 +19,7 @@ export class AuthService {
     private loadingService: LoadingService
   ) {}
 
-  baseUrl: string = environment.baseUrl + '/auth';
+  baseUrl: string = environment.baseUrl + '/utilisateur';
 
   private _userInfos$ = new BehaviorSubject<UserInfos>({});
   get userInfos$(): Observable<UserInfos> {

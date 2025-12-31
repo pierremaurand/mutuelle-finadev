@@ -6,6 +6,7 @@ namespace mutuelleApi.interfaces
     {
         IAdhesionRepository AdhesionRepository { get; } 
         IAgenceRepository AgenceRepository { get; } 
+        IAssistanceRepository AssistanceRepository { get; } 
         IAvanceRepository AvanceRepository { get; }
         IBanqueRepository BanqueRepository { get; }
         ICaisseRepository CaisseRepository { get; }

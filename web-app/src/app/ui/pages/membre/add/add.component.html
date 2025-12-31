@@ -7,40 +7,44 @@
       </h3>
     </div>
     <hr />
-    <div class="row">
+    <div class="row mb-3">
       <div class="col-md-9">
         <div class="card shadow">
           <div class="card-body">
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="nom" class="form-label">Nom du membre</label>
+
+            <div class="row mb-3">
+              <div class="col">
+                <label for="nom" class="form-label">Nom</label>
                 <input
                   type="text"
                   class="form-control {{ nomClasse }}"
                   name="nom"
                   id="nom"
-                  placeholder="Nom de l'membre..."
+                  placeholder="Le nom du membre..."
                   formControlName="nom"
                 />
                 <div class="invalid-feedback">Le nom est requis!</div>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="sexe" class="form-label">Sexe du membre</label>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col">
+                <label for="sexe" class="form-label">Sexe</label>
                 <select
                   class="form-select {{ sexeClasse }}"
                   name="sexe"
                   id="sexe"
                   formControlName="sexe"
                 >
-                  <option value=""></option>
+                  <option value="">Choisir un sexe</option>
                   <option value="1">Masculin</option>
                   <option value="2">Féminin</option>
                 </select>
                 <div class="invalid-feedback">Le sexe est requis!</div>
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col">
                 <label for="dateNaissance" class="form-label"
-                  >Date de naissance du membre</label
+                  >Date de naissance</label
                 >
                 <input
                   type="date"
@@ -54,9 +58,9 @@
                   La date de naissance est requise!
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col">
                 <label for="lieuNaissance" class="form-label"
-                  >Lieu de naissance du membre</label
+                  >Lieu de naissance</label
                 >
                 <input
                   type="text"
@@ -70,9 +74,12 @@
                   Le lieu de naissance est requis!
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
+            </div>
+
+            <div class="row mb-3">
+              <div class="col">
                 <label for="telephone" class="form-label"
-                  >Numéro de téléphone du membre</label
+                  >Contact</label
                 >
                 <input
                   type="phone"
@@ -82,11 +89,12 @@
                   placeholder="Le numéro de téléphone du membre..."
                   formControlName="telephone"
                 />
-                <div class="invalid-feedback">Le téléphone est requis!</div>
+                <div class="invalid-feedback">Le contact est requis!</div>
               </div>
-              <div class="col-md-6 mb-3">
+
+              <div class="col">
                 <label for="email" class="form-label"
-                  >L'adresse email du membre</label
+                  >Email</label
                 >
                 <input
                   type="email"
@@ -98,9 +106,10 @@
                 />
                 <div class="invalid-feedback">L'email est requis!</div>
               </div>
-              <div class="col-md-6 mb-3">
+
+              <div class="col">
                 <label for="email" class="form-label"
-                  >Date d'adhésion du membre</label
+                  >Date d'adhésion</label
                 >
                 <input
                   type="date"
@@ -110,14 +119,14 @@
                   placeholder="La date d'adhésion du membre..."
                   formControlName="dateAdhesion"
                 />
-                <div class="invalid-feedback">
-                  La date d'adhésion est requise!
-                </div>
+                <div class="invalid-feedback">La date d'adhésion est requise!</div>
               </div>
+            </div>
+            <div class="row">
               @if(agences$ | async; as agences){
-              <div class="col-md-6 mb-3">
+              <div class="col">
                 <label for="agenceId" class="form-label"
-                  >Agence d'affectation du membre</label
+                  >Agence d'affectation</label
                 >
                 <select
                   class="form-select {{ agenceIdClasse }}"
@@ -125,16 +134,14 @@
                   id="agenceId"
                   formControlName="agenceId"
                 >
-                  <option value=""></option>
+                  <option value="">Choisir une agence</option>
                   @for(agence of agences; track agence.id){
                   <option value="{{ agence.id }}">
                     {{ agence.nom | uppercase }}
                   </option>
                   }
                 </select>
-                <div class="invalid-feedback">
-                  L'agence d'affectation est requise!
-                </div>
+                <div class="invalid-feedback">L'agence d'affectation est requise!</div>
               </div>
               }
             </div>

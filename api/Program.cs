@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using mutuelleApi.data;
 using mutuelleApi.helpers;
 using mutuelleApi.interfaces;
+using mutuelleApi.middlewares;
 using mutuelleApi.models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,7 +35,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default"))
 .UseSeeding((context, _) =>
         {
-             var testUser = context.Set<Utilisateur>().FirstOrDefault(u => u.Login == "admin");
+            var testUser = context.Set<Utilisateur>().FirstOrDefault(u => u.Login == "admin");
             if (testUser == null)
             {
                 byte[] passwordHash, passwordKey;
@@ -47,10 +48,11 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
                 {
                     Login = "admin",
                     MotDePasse = passwordHash,
-                    Nom = "OVASSA PIERRE MAURAND",
-                    Sexe = mutuelleApi.enums.Sexe.Masculin,
                     ClesMotDePasse = passwordKey,
-                    Role = mutuelleApi.enums.Role.Administrateur,
+                    Nom = "OVASSA PIERRE MAURAND",
+                    Sexe = "Masculin",
+                    Status = "true",
+                    Role = "admin",
                     ModifiePar = 0,
                     ModifieLe = DateTime.Now,
                 });
@@ -73,7 +75,10 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
                     Login = "admin",
                     MotDePasse = passwordHash,
                     ClesMotDePasse = passwordKey,
-                    Role = mutuelleApi.enums.Role.Administrateur,
+                    Nom = "OVASSA PIERRE MAURAND",
+                    Sexe = "Masculin",
+                    Status = "true",
+                    Role = "admin",
                     ModifiePar = 0,
                     ModifieLe = DateTime.Now,
                 });
@@ -98,14 +103,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.UseSwaggerUi(options =>
-    {
-        options.DocumentPath = "/openapi/v1.json";
-    });
-}
+// app.ConfigureExceptionHandler();
+app.UseMiddleware<ExceptionMiddleware>();
+
 
 app.UseCors("CorsPolicy");
 

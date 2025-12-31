@@ -1,0 +1,326 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\controllers\\utilisateurcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:controllers\\utilisateurcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\dtos\\updateuserrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:dtos\\updateuserrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\dtos\\changeuserpasswordrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:dtos\\changeuserpasswordrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\dtos\\updateuserstatusrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:dtos\\updateuserstatusrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\dtos\\adduserrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:dtos\\adduserrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\controllers\\adhesioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:controllers\\adhesioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\helpers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:helpers\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\dtos\\loginuserresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:dtos\\loginuserresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\dtos\\loginuserrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:dtos\\loginuserrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:models\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:middlewares\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\extensions\\exceptionmiddlewareextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:extensions\\exceptionmiddlewareextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\controllers\\assistancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:controllers\\assistancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|c:\\users\\maurand\\documents\\travail\\projects\\mutuelle-finadev\\api\\dtos\\userinfos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD8511-8C1B-82A8-DDD5-0DAB3222A352}|mutuelleApi.csproj|solutionrelative:dtos\\userinfos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UpdateUserStatusRequest.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\UpdateUserStatusRequest.cs",
+              "RelativeDocumentMoniker": "dtos\\UpdateUserStatusRequest.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\UpdateUserStatusRequest.cs",
+              "RelativeToolTip": "dtos\\UpdateUserStatusRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T09:51:30.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UtilisateurController.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\controllers\\UtilisateurController.cs",
+              "RelativeDocumentMoniker": "controllers\\UtilisateurController.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\controllers\\UtilisateurController.cs",
+              "RelativeToolTip": "controllers\\UtilisateurController.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAswH0AAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T03:51:51.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UpdateUserRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\UpdateUserRequestDto.cs",
+              "RelativeDocumentMoniker": "dtos\\UpdateUserRequestDto.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\UpdateUserRequestDto.cs",
+              "RelativeToolTip": "dtos\\UpdateUserRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T09:17:36.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-30T10:30:05.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-30T10:30:34.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChangeUserPasswordRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\ChangeUserPasswordRequestDto.cs",
+              "RelativeDocumentMoniker": "dtos\\ChangeUserPasswordRequestDto.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\ChangeUserPasswordRequestDto.cs",
+              "RelativeToolTip": "dtos\\ChangeUserPasswordRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T09:55:24.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddUserRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\AddUserRequestDto.cs",
+              "RelativeDocumentMoniker": "dtos\\AddUserRequestDto.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\AddUserRequestDto.cs",
+              "RelativeToolTip": "dtos\\AddUserRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T09:13:46.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AutoMapperProfiles.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\helpers\\AutoMapperProfiles.cs",
+              "RelativeDocumentMoniker": "helpers\\AutoMapperProfiles.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\helpers\\AutoMapperProfiles.cs",
+              "RelativeToolTip": "helpers\\AutoMapperProfiles.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwB8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T09:03:33.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginUserResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\LoginUserResponseDto.cs",
+              "RelativeDocumentMoniker": "dtos\\LoginUserResponseDto.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\LoginUserResponseDto.cs",
+              "RelativeToolTip": "dtos\\LoginUserResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T09:01:25.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginUserRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\LoginUserRequestDto.cs",
+              "RelativeDocumentMoniker": "dtos\\LoginUserRequestDto.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\LoginUserRequestDto.cs",
+              "RelativeToolTip": "dtos\\LoginUserRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T08:50:24.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdhesionController.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\controllers\\AdhesionController.cs",
+              "RelativeDocumentMoniker": "controllers\\AdhesionController.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\controllers\\AdhesionController.cs",
+              "RelativeToolTip": "controllers\\AdhesionController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T06:34:23.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Utilisateur.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\models\\Utilisateur.cs",
+              "RelativeDocumentMoniker": "models\\Utilisateur.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\models\\Utilisateur.cs",
+              "RelativeToolTip": "models\\Utilisateur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T05:06:27.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\middlewares\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "middlewares\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\middlewares\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "middlewares\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T06:34:16.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T04:56:53.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ExceptionMiddlewareExtension.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\extensions\\ExceptionMiddlewareExtension.cs",
+              "RelativeDocumentMoniker": "extensions\\ExceptionMiddlewareExtension.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\extensions\\ExceptionMiddlewareExtension.cs",
+              "RelativeToolTip": "extensions\\ExceptionMiddlewareExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T04:49:32.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserInfos.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\UserInfos.cs",
+              "RelativeDocumentMoniker": "dtos\\UserInfos.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\dtos\\UserInfos.cs",
+              "RelativeToolTip": "dtos\\UserInfos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T05:06:15.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AssistanceController.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\controllers\\AssistanceController.cs",
+              "RelativeDocumentMoniker": "controllers\\AssistanceController.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\controllers\\AssistanceController.cs",
+              "RelativeToolTip": "controllers\\AssistanceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T05:17:02.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\MAURAND\\Documents\\Travail\\Projects\\mutuelle-finadev\\api\\controllers\\AuthController.cs",
+              "RelativeToolTip": "controllers\\AuthController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T03:51:05.179Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
